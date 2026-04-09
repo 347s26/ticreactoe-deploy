@@ -30,10 +30,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    build:
-      context: https://github.com/347s26/ticreactoe.git
-      args:
-        VITE_BACKEND_URL: ""
+    image: ghcr.io/347s26/ticreactoe:latest
     ports:
       - "${PORT:-80}:80"
     depends_on:
