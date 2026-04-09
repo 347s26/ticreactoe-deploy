@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
 
   api:
-    build: ./34726-ticreactoe-api
+    build: https://github.com/347s26/ticreactoe-api.git
     environment:
       DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Set DJANGO_SECRET_KEY in your .env file}
       DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1}
@@ -31,7 +31,7 @@ services:
 
   frontend:
     build:
-      context: ./34726-ticreactoe
+      context: https://github.com/347s26/ticreactoe.git
       args:
         VITE_BACKEND_URL: ""
     ports:
